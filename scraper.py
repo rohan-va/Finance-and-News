@@ -27,3 +27,7 @@ datagoogl.to_csv("Google.csv", index=False)
 datameta = yf.download(["META"], start="2024-01-01")
 datameta.reset_index(inplace=True)
 datameta.to_csv("Meta.csv", index=False)
+
+datatgt = yf.download(["TGT"], start="2024-01-01")
+datatgt.reset_index(inplace=True)
+datatgt.to_csv("Target.csv", index=False)
