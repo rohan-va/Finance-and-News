@@ -5,3 +5,7 @@ This repository is dedicated for a python webscraper. This will consist files re
 Can be run after closing for a day to update stock close price and vary predictions.
 
 More to come...👀
+
+New additions ( After week of 9/28 )
+
+- Added datetime import to update csv per new day/stock open

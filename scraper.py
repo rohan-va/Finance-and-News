@@ -1,33 +1,38 @@
-# imports
+# imports - yfinance and datetime
 import yfinance as yf
-import pandas as pd
-import matplotlib.pyplot as plt
+from datetime import datetime
 
-# getting data from many stocks and creating csv's (order provided)
-dataappl = yf.download(["AAPL"], start="2024-01-01")
-dataappl.reset_index(inplace=True)
-dataappl.to_csv("Apple.csv", index=False)
+# Retrieving today's date
+todayDate = datetime.today().strftime("%Y-%m-%d")
 
-datamsft = yf.download(["MSFT"], start="2024-01-01")
-datamsft.reset_index(inplace=True)
-datamsft.to_csv("Microsoft.csv", index=False)
 
-databnb = yf.download(["ABNB"], start="2024-01-01")
-databnb.reset_index(inplace=True)
-databnb.to_csv("Airbnb.csv", index=False)
+# Function defining to saving of stock data
+def save_stock_data(ticker, nameFile):
+    # Start date for data
+    data = yf.download([ticker], start="2024-01-01")
+    # Applies 'Date' as column for prediction.py
+    data.reset_index(inplace=True)
+    filename = f"{nameFile}.{todayDate}.csv"
+    data.to_csv(filename, index=False)
+    print(f"Saved {filename}")
 
-dataamzn = yf.download(["AMZN"], start="2024-01-01")
-dataamzn.reset_index(inplace=True)
-dataamzn.to_csv("Amazon.csv", index=False)
 
-datagoogl = yf.download(["GOOGL"], start="2024-01-01")
-datagoogl.reset_index(inplace=True)
-datagoogl.to_csv("Google.csv", index=False)
+# List of stock ticker and name
+stocks = {
+    "AAPL": "Apple",
+    "MSFT": "Microsoft",
+    "ABNB": "Airbnb",
+    "AMZN": "Amazon",
+    "GOOGL": "Google",
+    "META": "Meta",
+    "TGT": "Target",
+    "WMT": "Walmart",
+    "NVDA": "NVIDIA-Corp",
+    "PLTR": "Palantir-Technologies-Inc",
+    "JPM": "JPMorgan-Chase-&-Co",
+    "NKE": "Nike-Inc",
+}
 
-datameta = yf.download(["META"], start="2024-01-01")
-datameta.reset_index(inplace=True)
-datameta.to_csv("Meta.csv", index=False)
-
-datatgt = yf.download(["TGT"], start="2024-01-01")
-datatgt.reset_index(inplace=True)
-datatgt.to_csv("Target.csv", index=False)
+# Loop through each stock, saving ticker and name listed above
+for ticker, name in stocks.items():
+    save_stock_data(ticker, name)
