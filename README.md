@@ -9,3 +9,4 @@ More to come...👀
 New additions ( After week of 9/28 )
 
 - Added datetime import to update csv per new day/stock open
+- Updated csv's path and download to specific folder in both .py files
