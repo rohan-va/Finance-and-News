@@ -7,6 +7,7 @@ import os
 todayDate = datetime.today().strftime("%Y-%m-%d")
 folderPath = "C:/Users/rohan/Coding/financewebsrape/companies-stock_data"
 
+
 # Function defining to saving of stock data
 def save_stock_data(ticker, nameFile):
     # Start date for data
@@ -33,6 +34,8 @@ stocks = {
     "PLTR": "Palantir-Technologies-Inc",
     "JPM": "JPMorgan-Chase-&-Co",
     "NKE": "Nike-Inc",
+    "COST": "Costco",
+    # More to come
 }
 
 # Loop through each stock, saving ticker and name listed above
