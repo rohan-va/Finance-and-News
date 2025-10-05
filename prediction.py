@@ -69,8 +69,8 @@ def process_stock_csvs(file_path, output_folder):
 
 
 # Folder Paths - Data and Plots
-dataFolder = "C:/Users/rohan/Coding/financewebsrape-Mantis/companies-stock_data"
-output_folder = "C:/Users/rohan/Coding/financewebsrape-Mantis/plots"
+dataFolder = "C:/Users/rohan/Coding/financewebsrape/companies-stock_data"
+output_folder = "C:/Users/rohan/Coding/financewebsrape/plots"
 
 # If folder doesn't exist
 os.makedirs(output_folder, exist_ok=True)

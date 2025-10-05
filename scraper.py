@@ -1,10 +1,11 @@
-# imports - yfinance and datetime
+# imports - data and dates
 import yfinance as yf
 from datetime import datetime
+import os
 
 # Retrieving today's date
 todayDate = datetime.today().strftime("%Y-%m-%d")
-
+folderPath = "C:/Users/rohan/Coding/financewebsrape/companies-stock_data"
 
 # Function defining to saving of stock data
 def save_stock_data(ticker, nameFile):
@@ -13,8 +14,9 @@ def save_stock_data(ticker, nameFile):
     # Applies 'Date' as column for prediction.py
     data.reset_index(inplace=True)
     filename = f"{nameFile}.{todayDate}.csv"
-    data.to_csv(filename, index=False)
-    print(f"Saved {filename}")
+    full_path = f"{folderPath}/{filename}"
+    data.to_csv(full_path, index=False)
+    print(f"Saved {full_path}")
 
 
 # List of stock ticker and name
