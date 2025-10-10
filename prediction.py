@@ -4,15 +4,31 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 import matplotlib.pyplot as plt
 import os
+import warnings
+from datetime import datetime
+
+# Globally defining
+todayDate = datetime.today().strftime("%Y-%m-%d")
 
 
-def process_stock_csvs(file_path, output_folder):
+def process_stock_csvs(file_path, output_folder, reportsFolder):
+    # Main script
     company_name = os.path.splitext(os.path.basename(file_path))[0]
     df = pd.read_csv(
         file_path,
         parse_dates=["Date"],
         index_col="Date",
     )  # Read all dates in airbnb.csv
+
+    # Safety Checks
+    if len(df) < 10:
+        print(f"{company_name}: Not enough data to predict! Skipping.")
+        return
+    if "Close" not in df.columns:
+        print(f"{company_name}: 'Close' column missing! Skipping.")
+        return
+    warnings.filterwarnings("ignore")
+
     df = df[["Close"]]  # Focus on the closing prices per day
     df["Close"] = pd.to_numeric(df["Close"], errors="coerce")
     df.dropna(subset=["Close"], inplace=True)
@@ -35,10 +51,19 @@ def process_stock_csvs(file_path, output_folder):
     model = RandomForestClassifier()
     model.fit(X_train, y_train)
 
-    # Predicitons
+    # Predicitons and printing classification report via terminal
     predictions = model.predict(X_test)
     print(f"\nResults for {os.path.basename(file_path)}")
     print(classification_report(y_test, predictions))
+
+    # Printing classification reports in folder within directory
+    report_path = os.path.join(reportsFolder, f"{company_name}_{todayDate}report.txt")
+    if existenceOf_reports(file_path, reportsFolder):
+        print(f"{company_name}: Report for {todayDate} already exists. Skipping!")
+        return
+    else:
+        with open(report_path, "w") as f:
+            f.write(classification_report(y_test, predictions))
 
     # Visualize the predicitons from model using matplot
     df_test = df.iloc[-len(y_test) :].copy()
@@ -68,9 +93,17 @@ def process_stock_csvs(file_path, output_folder):
     plt.close()
 
 
+def existenceOf_reports(file_path, reportsFolder):
+    company_name = os.path.splitext(os.path.basename(file_path))[0]
+    expectedFilename = f"{company_name}_{todayDate}report.txt"
+    full_path = os.path.join(reportsFolder, expectedFilename)
+    return os.path.exists(full_path)
+
+
 # Folder Paths - Data and Plots
 dataFolder = "C:/Users/rohan/Coding/financewebsrape/companies-stock_data"
 output_folder = "C:/Users/rohan/Coding/financewebsrape/plots"
+reportsFolder = "C:/Users/rohan/Coding/financewebsrape/reports"
 
 # If folder doesn't exist
 os.makedirs(output_folder, exist_ok=True)
@@ -79,4 +112,4 @@ os.makedirs(output_folder, exist_ok=True)
 for filename in os.listdir(dataFolder):
     if filename.endswith(".csv"):
         full_path = os.path.join(dataFolder, filename)
-        process_stock_csvs(full_path, output_folder)
+        process_stock_csvs(full_path, output_folder, reportsFolder)
