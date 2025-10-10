@@ -35,6 +35,9 @@ stocks = {
     "JPM": "JPMorgan-Chase-&-Co",
     "NKE": "Nike-Inc",
     "COST": "Costco",
+    "AVGO": "Broadcom",
+    "2222.SR": "Saudi-Aramco",
+    "TSM": "Taiwan-Semiconducter-Manufacturing",
     # More to come
 }
 
