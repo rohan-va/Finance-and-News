@@ -10,3 +10,5 @@ New additions ( After week of 9/28 )
 
 - Added datetime import to update csv per new day/stock open
 - Updated csv's path and download to specific folder in both .py files
+- Included 'reports' folder for the results of RandomForest model. Consists of f1-score, accuracy, etc.
+- Overriding of certain reports and plots depending on new information and if run multiple times per day
