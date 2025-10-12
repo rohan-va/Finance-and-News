@@ -1,6 +1,6 @@
 # Financial Webscraping and Model Predicting
 
-This repository is dedicated for a python webscraper. This will consist files related to a scraper that will scrape data online from certain urls (Google Finance, Yahoo Finance, etc.) including stocks, close/open values, volume, etc. and predict them using a RandomForestClassifier model, displaying the predictions in a plot-based image.
+This repository is dedicated for a python webscraper. This will consist files related to a scraper that will scrape data from Yahoo Finance including stocks, close/open values, volume, and more within. THen, another file is responsible for the prediction of said data using a RandomForestClassifier model, displaying the predictions in a plot-based image and producing reports per the model in .txt files.
 
 Can be run after closing for a day to update stock close price and vary predictions.
 
