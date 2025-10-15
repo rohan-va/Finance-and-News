@@ -14,3 +14,15 @@ New additions ( After week of 9/28 )
 - Overriding of certain reports and plots depending on new information and if run multiple times per day
 
 # News Webscraping
+This is the news scrapper portion of the repository. This scraper attains past news articles over 24 hours spans alerting us about new information regarding stocks, finance, etc.
+
+- 24-hour fetching
+- CSV Updates based on each day
+- Overrides information upon running
+- Attain sources for a single source right now
+
+#Areas to improve
+
+- Need to include more news sources
+- Gear towards specific stocks and coins to investigate certain trends
+- Expand to a 7-day span
