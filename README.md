@@ -15,15 +15,17 @@ New additions ( After week of 9/28 )
 
 # News Webscraping
 
-This is the news scrapper portion of the repository. This scraper attains past news articles over 24 hours spans alerting us about new information regarding stocks, finance, etc.
+This is the news scraper portion of this repository. It attains past news articles over 24 hours, alerting users about new information regarding stocks, finance, etc.
+
+Includes:
 
 - 24-hour fetching
-- CSV Updates based on each day
+- CSV Updates based on each day upon running
 - Overrides information upon running
 - Attain sources for a single source right now
 
-#Areas to improve
+Areas to improve:
 
-- Need to include more news sources
-- Gear towards specific stocks and coins to investigate certain trends
+- Inclusion of more news sources
+- Gear proogram towards specific stocks and coins to investigate certain trends/chatter
 - Expand to a 7-day span
