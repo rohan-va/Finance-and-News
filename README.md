@@ -11,9 +11,10 @@ New additions ( After week of 9/28 )
 - Added datetime import to update csv per new day/stock open
 - Updated csv's path and download to specific folder in both .py files
 - Included 'reports' folder for the results of RandomForest model. Consists of f1-score, accuracy, etc.
-- Overriding of certain reports and plots depending on new information and if run multiple times per day
+- Overriding of certain reports and plots depending on new information and if run multiple times per day (same file)
 
 # News Webscraping
+
 This is the news scrapper portion of the repository. This scraper attains past news articles over 24 hours spans alerting us about new information regarding stocks, finance, etc.
 
 - 24-hour fetching
