@@ -38,6 +38,12 @@ stocks = {
     "AVGO": "Broadcom",
     "2222.SR": "Saudi-Aramco",
     "TSM": "Taiwan-Semiconducter-Manufacturing",
+    "MCD": "McDonald's-Corporation",
+    "BTC-USD": "Bitcoin-USD",
+    "NFLX": "Netflix",
+    "F": "Ford-Motor-Company",
+    "HMC": "Honda-Motor-Company",
+    "DELL": "Dell-Technologies-Inc.",
     # More to come
 }
 
