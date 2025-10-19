@@ -44,6 +44,10 @@ stocks = {
     "F": "Ford-Motor-Company",
     "HMC": "Honda-Motor-Company",
     "DELL": "Dell-Technologies-Inc.",
+    "CVS": "CVS-Health-Corporation",
+    "W": "Wayfair-Inc.",
+    "AAL": "American-Airlines-Group-Inc.",
+    "UPS": "United-Parcel-Service",
     # More to come
 }
 
