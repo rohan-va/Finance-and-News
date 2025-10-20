@@ -5,7 +5,7 @@ import os
 
 # Retrieving today's date
 todayDate = datetime.today().strftime("%Y-%m-%d")
-folderPath = "C:/Users/rohan/Coding/financewebsrape/companies-stock_data"
+folderPath = "C:/Users/rohan/Coding/financewebscrape/companies-stock_data"
 
 
 # Function defining to saving of stock data

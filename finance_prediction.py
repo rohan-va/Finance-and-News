@@ -101,9 +101,9 @@ def existenceOf_reports(file_path, reportsFolder):
 
 
 # Folder Paths - Data and Plots
-dataFolder = "C:/Users/rohan/Coding/financewebsrape/companies-stock_data"
-output_folder = "C:/Users/rohan/Coding/financewebsrape/plots"
-reportsFolder = "C:/Users/rohan/Coding/financewebsrape/reports"
+dataFolder = "C:/Users/rohan/Coding/financewebscrape/companies-stock_data"
+output_folder = "C:/Users/rohan/Coding/financewebscrape/plots"
+reportsFolder = "C:/Users/rohan/Coding/financewebscrape/reports"
 
 # If folder doesn't exist
 os.makedirs(output_folder, exist_ok=True)
